@@ -2,11 +2,11 @@ import Category from "./Category";
 
 function ProductCategories() {
   return (
-    <div className="categories">
+    <section className="categories">
       <Category category="headphones" />
       <Category category="speakers" />
       <Category category="earphones" />
-    </div>
+    </section>
   );
 }
 
