@@ -1,4 +1,4 @@
-import SeeProductBtn from "./SeeProductBtn";
+import SeeProductBtn from "../ui/SeeProductBtn";
 
 function Hero() {
   return (

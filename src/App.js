@@ -1,19 +1,15 @@
-import Header from "./Header";
-import Hero from "./Hero";
-import ProductCategories from "./ProductCategories";
-import FeaturedProducts from "./FeaturedProducts";
-import AboutAudiophileFooter from "./AboutAudiophileFooter";
+import Header from "./components/shared/Header";
+import Home from "./components/pages/Home";
+import Footer from "./components/shared/Footer";
 
 function App() {
   return (
     <div className="app">
       <Header />
       <main>
-        <Hero />
-        <ProductCategories />
-        <FeaturedProducts />
-        <AboutAudiophileFooter />
+        <Home />
       </main>
+      <Footer />
     </div>
   );
 }
