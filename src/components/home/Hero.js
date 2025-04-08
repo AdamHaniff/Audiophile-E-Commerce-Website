@@ -18,7 +18,7 @@ function Hero() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </span>
-        <SeeProductBtn />
+        <SeeProductBtn bgColor="orange" />
       </div>
     </section>
   );
