@@ -11,6 +11,7 @@ $color-onyx: #101010;
 $color-white-10-percent: rgba(255, 255, 255, 0.104);
 $color-white-49-percent: rgba(255, 255, 255, 0.4964);
 $color-white-75-percent: rgba(255, 255, 255, 0.75);
+$color-black-50-percent: rgba(0, 0, 0, 0.5);
 
 // ********** FONT-FAMILY **********
 $font-manrope: "Manrope", sans-serif;
@@ -128,13 +129,105 @@ body {
   border: none;
 }
 
+// *** CATEGORIES-FEATURED-ABOUT ***
+.categories-featured-about {
+  padding: 0 2.4rem;
+}
+
 // ********** CATEGORIES **********
 .categories {
   display: flex;
   flex-direction: column;
   gap: 6.8rem;
+  margin-bottom: 12rem;
 }
 
 // *********** CATEGORY ***********
 .category {
+  max-width: 32.7rem;
+  height: 16.5rem;
+  border-radius: 0.8rem;
+  background: $color-seashell;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &__img {
+    display: block;
+    position: absolute;
+    width: auto;
+  }
+
+  &:nth-child(1) img {
+    height: 10.4rem;
+    transform: translateY(-4rem);
+  }
+
+  &:nth-child(2) img {
+    height: 10.1rem;
+    transform: translateY(-3.7rem);
+  }
+
+  &:nth-child(3) img {
+    height: 13.3rem;
+    transform: translateY(-4.4rem);
+  }
+
+  &__name-shop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.7rem;
+    margin-top: 8.8rem;
+  }
+
+  &__name {
+    color: $color-black;
+    font-size: 1.5rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1071rem;
+    text-transform: uppercase;
+  }
+
+  &__shop-icon {
+    display: flex;
+    gap: 1.332rem;
+    align-items: center;
+  }
+
+  &__shop {
+    color: $color-black-50-percent;
+    font-size: 1.3rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+
+  &__right-icon {
+    display: block;
+  }
+}
+
+// *********** FEATURED ***********
+.featured {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  &__product {
+    width: 100%;
+    height: 60rem;
+    border-radius: 0.8rem;
+    background: $color-raw-sienna;
+  }
+
+  &__circles {
+    display: block;
+    width: auto;
+    height: 58.8rem;
+  }
+
+  &__product-img {
+  }
 }

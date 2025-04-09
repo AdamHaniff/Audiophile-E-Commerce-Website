@@ -7,9 +7,11 @@ function Home() {
   return (
     <div>
       <Hero />
-      <ProductCategories />
-      <FeaturedProducts />
-      <AboutAudiophile />
+      <div className="categories-featured-about">
+        <ProductCategories />
+        <FeaturedProducts />
+        <AboutAudiophile />
+      </div>
     </div>
   );
 }
