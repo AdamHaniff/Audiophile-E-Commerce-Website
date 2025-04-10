@@ -14,15 +14,17 @@ function FeaturedProducts() {
           src="assets/home/mobile/image-speaker-zx9.png"
           alt="ZX9 Speaker"
         />
-        <span className="featured__product-name">
-          ZX9 <br />
-          Speaker
-        </span>
-        <span className="featured__product-about">
-          Upgrade to premium speakers that are phenomenally built to deliver
-          truly remarkable sound.
-        </span>
-        <SeeProductBtn />
+        <div className="featured__name-about-btn">
+          <span className="featured__product-name">
+            ZX9 <br />
+            Speaker
+          </span>
+          <span className="featured__product-about">
+            Upgrade to premium speakers that are phenomenally built to deliver
+            truly remarkable sound.
+          </span>
+          <SeeProductBtn bgColor="black" />
+        </div>
       </div>
 
       <div className="featured__product">
@@ -30,11 +32,6 @@ function FeaturedProducts() {
           <span className="featured__product-name">ZX7 Speaker</span>
           <SeeProductBtn />
         </div>
-        <img
-          className="featured__product-img"
-          src="assets/home/mobile/image-speaker-zx7.jpg"
-          alt="ZX7 Speaker"
-        />
       </div>
 
       <div className="featured__img-name">
