@@ -30,7 +30,7 @@ function FeaturedProducts() {
       <div className="featured__product">
         <div className="featured__name-btn">
           <span className="featured__product-name">ZX7 Speaker</span>
-          <SeeProductBtn />
+          <SeeProductBtn bgColor="transparent" />
         </div>
       </div>
 
@@ -42,7 +42,7 @@ function FeaturedProducts() {
         />
         <div className="featured__name-btn">
           <span className="featured__product-name">YX1 Earphones</span>
-          <SeeProductBtn />
+          <SeeProductBtn bgColor="transparent" />
         </div>
       </div>
     </section>
