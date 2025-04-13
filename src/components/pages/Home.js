@@ -7,7 +7,7 @@ function Home() {
   return (
     <div>
       <Hero />
-      <div className="categories-featured-about">
+      <div className="sections-container">
         <ProductCategories />
         <FeaturedProducts />
         <AboutAudiophile />
