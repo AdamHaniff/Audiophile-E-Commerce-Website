@@ -18,7 +18,10 @@ function Hero() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </span>
-        <SeeProductBtn bgColor="orange" />
+        <SeeProductBtn
+          bgColor="orange"
+          to="/headphones/xx99-mark-two-headphones"
+        />
       </div>
     </section>
   );

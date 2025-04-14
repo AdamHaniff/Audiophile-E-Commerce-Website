@@ -1,4 +1,6 @@
-function SeeProductBtn({ bgColor }) {
+import { useNavigate } from "react-router-dom";
+
+function SeeProductBtn({ bgColor, to }) {
   // VARIABLES
   const styles = {
     orange: {
@@ -18,8 +20,15 @@ function SeeProductBtn({ bgColor }) {
     },
   };
 
+  const navigate = useNavigate();
+
   return (
-    <button className="product-btn" type="button" style={styles[bgColor]}>
+    <button
+      className="product-btn"
+      type="button"
+      style={styles[bgColor]}
+      onClick={() => navigate(to)}
+    >
       See Product
     </button>
   );

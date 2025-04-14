@@ -23,14 +23,14 @@ function FeaturedProducts() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </span>
-          <SeeProductBtn bgColor="black" />
+          <SeeProductBtn bgColor="black" to="/speakers/zx9-speaker" />
         </div>
       </div>
 
       <div className="featured__product">
         <div className="featured__name-btn">
           <span className="featured__product-name">ZX7 Speaker</span>
-          <SeeProductBtn bgColor="transparent" />
+          <SeeProductBtn bgColor="transparent" to="/speakers/zx7-speaker" />
         </div>
       </div>
 
@@ -42,7 +42,7 @@ function FeaturedProducts() {
         />
         <div className="featured__name-btn">
           <span className="featured__product-name">YX1 Earphones</span>
-          <SeeProductBtn bgColor="transparent" />
+          <SeeProductBtn bgColor="transparent" to="/earphones/yx1-earphones" />
         </div>
       </div>
     </section>

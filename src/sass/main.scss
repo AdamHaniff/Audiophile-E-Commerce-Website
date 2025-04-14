@@ -303,6 +303,7 @@ body {
     & .featured__product-img {
       display: block;
       border-radius: 0.8rem;
+      max-width: 32.7rem;
     }
 
     & .featured__name-btn {
@@ -442,5 +443,6 @@ body {
     line-height: 2.5rem;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
+    text-decoration: none;
   }
 }

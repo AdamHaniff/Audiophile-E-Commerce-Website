@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 function Category({ category }) {
+  // VARIABLES
+  const navigate = useNavigate();
+
   return (
-    <div className="category">
+    <div className="category" onClick={() => navigate(`/${category}`)}>
       <img
         className="category__img"
         src={`assets/shared/desktop/image-category-thumbnail-${category}.png`}
