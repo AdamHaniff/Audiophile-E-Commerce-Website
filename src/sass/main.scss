@@ -446,3 +446,21 @@ body {
     text-decoration: none;
   }
 }
+
+// *********** PRODUCTS ***********
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 6.4rem;
+
+  &__header {
+    background: $color-black;
+    padding: 3.2rem 8.4rem;
+    color: $color-white;
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+  }
+}

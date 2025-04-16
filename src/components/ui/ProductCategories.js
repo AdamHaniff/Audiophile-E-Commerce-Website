@@ -1,4 +1,4 @@
-import Category from "../ui/Category";
+import Category from "./Category";
 
 function ProductCategories() {
   return (

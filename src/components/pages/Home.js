@@ -1,7 +1,7 @@
 import FeaturedProducts from "../home/FeaturedProducts";
 import Hero from "../home/Hero";
-import AboutAudiophile from "../shared/AboutAudiophile";
-import ProductCategories from "../shared/ProductCategories";
+import AboutAudiophile from "../ui/AboutAudiophile";
+import ProductCategories from "../ui/ProductCategories";
 
 function Home() {
   return (

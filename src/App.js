@@ -1,10 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./components/ui/AppLayout";
 import Home from "./components/pages/Home";
-import Headphones from "./components/pages/Headphones";
+import CategoryPreviews from "./components/pages/CategoryPreviews";
 import ProductDetail from "./components/pages/ProductDetail";
-import Speakers from "./components/pages/Speakers";
-import Earphones from "./components/pages/Earphones";
 import Checkout from "./components/pages/Checkout";
 import PageNotFound from "./components/pages/PageNotFound";
 
@@ -15,15 +13,15 @@ function App() {
         <Route element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="headphones">
-            <Route index element={<Headphones />} />
+            <Route index element={<CategoryPreviews category="headphones" />} />
             <Route path=":productSlug" element={<ProductDetail />} />
           </Route>
           <Route path="speakers">
-            <Route index element={<Speakers />} />
+            <Route index element={<CategoryPreviews category="speakers" />} />
             <Route path=":productSlug" element={<ProductDetail />} />
           </Route>
           <Route path="earphones">
-            <Route index element={<Earphones />} />
+            <Route index element={<CategoryPreviews category="earphones" />} />
             <Route path=":productSlug" element={<ProductDetail />} />
           </Route>
           <Route path="checkout" element={<Checkout />} />

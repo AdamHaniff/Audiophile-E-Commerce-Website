@@ -1,5 +1,5 @@
-import Logo from "../ui/Logo";
-import Nav from "../ui/Nav";
+import Logo from "./Logo";
+import Nav from "./Nav";
 
 function Footer() {
   return (
