@@ -115,6 +115,10 @@ body {
     max-width: 32.8rem;
     margin-bottom: 2.8rem;
   }
+
+  & + .sections-container .categories {
+    margin-bottom: 12rem;
+  }
 }
 
 // ******** SEE-PRODUCT-BTN ********
@@ -140,7 +144,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6.8rem;
-  margin-bottom: 12rem;
 }
 
 // *********** CATEGORY ***********
@@ -462,5 +465,60 @@ body {
     font-weight: $fw-bold;
     letter-spacing: 0.2rem;
     text-transform: uppercase;
+  }
+}
+
+// *********** PREVIEWS ***********
+.previews {
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+  margin-bottom: 17.2rem;
+
+  & + .categories {
+    margin-bottom: 12rem;
+  }
+}
+
+// ************ PREVIEW ************
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  &__img {
+    display: block;
+    max-width: 32.7rem;
+    border-radius: 0.8rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  &__new {
+    color: $color-raw-sienna;
+    font-size: 1.4rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    color: $color-black;
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    color: $color-black-50-percent;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
   }
 }

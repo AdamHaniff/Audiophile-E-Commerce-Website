@@ -83,6 +83,9 @@ body {
   max-width: 32.8rem;
   margin-bottom: 2.8rem;
 }
+.hero + .sections-container .categories {
+  margin-bottom: 12rem;
+}
 
 .product-btn {
   width: 16rem;
@@ -104,7 +107,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6.8rem;
-  margin-bottom: 12rem;
 }
 
 .category {
@@ -380,4 +382,51 @@ body {
   font-weight: 700;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
+}
+
+.previews {
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+  margin-bottom: 17.2rem;
+}
+.previews + .categories {
+  margin-bottom: 12rem;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.preview__img {
+  display: block;
+  max-width: 32.7rem;
+  border-radius: 0.8rem;
+}
+.preview__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+.preview__new {
+  color: #d87d4a;
+  font-size: 1.4rem;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+}
+.preview__name {
+  color: #000;
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+.preview__description {
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
 }/*# sourceMappingURL=main.css.map */
