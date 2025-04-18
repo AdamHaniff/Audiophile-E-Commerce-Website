@@ -1,8 +1,17 @@
+import { useLocation } from "react-router-dom";
 import Logo from "./Logo";
 
 function Header() {
+  // VARIABLES
+  const location = useLocation();
+  const isHomepage = location.pathname === "/";
+
   return (
-    <header className="header">
+    <header
+      className={`header ${
+        isHomepage ? "header--rangoon-green" : "header--black"
+      }`}
+    >
       <svg
         className="header__hamburger"
         width="16"

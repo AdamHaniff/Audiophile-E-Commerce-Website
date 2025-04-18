@@ -1,11 +1,18 @@
 import { useNavigate } from "react-router-dom";
+import { scrollToTop } from "../../helpers/helpers";
 
 function Category({ category }) {
   // VARIABLES
   const navigate = useNavigate();
 
+  // HANDLER FUNCTIONS
+  function handleCategoryClick() {
+    navigate(`/${category}`);
+    scrollToTop();
+  }
+
   return (
-    <div className="category" onClick={() => navigate(`/${category}`)}>
+    <div className="category" onClick={handleCategoryClick}>
       <img
         className="category__img"
         src={`assets/shared/desktop/image-category-thumbnail-${category}.png`}

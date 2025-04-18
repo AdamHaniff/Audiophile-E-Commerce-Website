@@ -7,4 +7,8 @@ function splitProductName(name) {
   return { firstPart, lastWord };
 }
 
-export { splitProductName };
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+export { splitProductName, scrollToTop };
