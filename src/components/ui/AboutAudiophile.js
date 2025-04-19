@@ -3,7 +3,7 @@ function AboutAudiophile() {
     <section className="about">
       <img
         className="about__img"
-        src="assets/shared/mobile/image-best-gear.jpg"
+        src="/assets/shared/mobile/image-best-gear.jpg"
         alt="Guy wearing headphones"
       />
       <div className="about__content">

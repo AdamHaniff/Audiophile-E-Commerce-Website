@@ -6,12 +6,12 @@ function FeaturedProducts() {
       <div className="featured__product">
         <img
           className="featured__circles"
-          src="assets/home/desktop/pattern-circles.svg"
+          src="/assets/home/desktop/pattern-circles.svg"
           alt="Pattern circles"
         />
         <img
           className="featured__product-img"
-          src="assets/home/mobile/image-speaker-zx9.png"
+          src="/assets/home/mobile/image-speaker-zx9.png"
           alt="ZX9 Speaker"
         />
         <div className="featured__name-about-btn">
@@ -37,7 +37,7 @@ function FeaturedProducts() {
       <div className="featured__img-name">
         <img
           className="featured__product-img"
-          src="assets/home/mobile/image-earphones-yx1.jpg"
+          src="/assets/home/mobile/image-earphones-yx1.jpg"
           alt="YX1 Earphones"
         />
         <div className="featured__name-btn">

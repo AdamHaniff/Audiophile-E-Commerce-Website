@@ -5,7 +5,7 @@ function Hero() {
     <section className="hero">
       <img
         className="hero__img"
-        src="assets/home/mobile/image-header.jpg"
+        src="/assets/home/mobile/image-header.jpg"
         alt="XX99 Mark II Headphones"
       />
       <div className="hero__content">
