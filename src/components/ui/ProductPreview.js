@@ -1,5 +1,6 @@
 import SeeProductBtn from "./SeeProductBtn";
 import { splitProductName } from "../../helpers/helpers";
+import Quantity from "./Quantity";
 
 function ProductPreview({ product, isProductDetail = false }) {
   // VARIABLES
@@ -24,18 +25,19 @@ function ProductPreview({ product, isProductDetail = false }) {
           {firstPart} <br /> {lastWord}
         </span>
         <p className="preview__description">{description}</p>
-        <SeeProductBtn bgColor="orange" to={`/${category}/${slug}`} />
-        {/* UP TO THIS CODE */}
-        <div className="detail__price-quantity-cart">
-          <span className="detail__price">$ {price}</span>
-          <div className="detail__quantity-cart">
-            <div className="detail__quantity-container">
-              <span className="detail__decrement-increment">-</span>
-              <span className="detail__quantity">1</span>
-              <span className="detail__decrement-increment">+</span>
+        {isProductDetail ? (
+          <div className="detail__price-quantity-cart">
+            <span className="detail__price">$ {price}</span>
+            <div className="detail__quantity-cart">
+              <Quantity />
+              <button className="detail__cart" type="button">
+                Add To Cart
+              </button>
             </div>
           </div>
-        </div>
+        ) : (
+          <SeeProductBtn bgColor="orange" to={`/${category}/${slug}`} />
+        )}
       </div>
     </div>
   );
