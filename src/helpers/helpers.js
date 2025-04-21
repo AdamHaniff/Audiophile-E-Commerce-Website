@@ -8,7 +8,7 @@ function splitProductName(name) {
 }
 
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo(0, 0);
 }
 
 export { splitProductName, scrollToTop };

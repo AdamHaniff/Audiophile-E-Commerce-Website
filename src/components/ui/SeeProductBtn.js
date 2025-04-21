@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { scrollToTop } from "../../helpers/helpers";
 
 function SeeProductBtn({ bgColor, to }) {
   // VARIABLES
@@ -22,12 +23,18 @@ function SeeProductBtn({ bgColor, to }) {
 
   const navigate = useNavigate();
 
+  // HANDLER FUNCTIONS
+  function handleBtnClick() {
+    navigate(to);
+    scrollToTop();
+  }
+
   return (
     <button
       className="product-btn"
       type="button"
       style={styles[bgColor]}
-      onClick={() => navigate(to)}
+      onClick={handleBtnClick}
     >
       See Product
     </button>

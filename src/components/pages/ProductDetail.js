@@ -1,27 +1,23 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import data from "../../data/data";
 import ProductPreview from "../ui/ProductPreview";
-import Features from "../ui/Features";
-import InTheBox from "../ui/InTheBox";
-import Gallery from "../ui/Gallery";
-import MayAlsoLike from "../ui/MayAlsoLike";
+import Features from "../productDetail/Features";
+import InTheBox from "../productDetail/InTheBox";
+import Gallery from "../productDetail/Gallery";
+import MayAlsoLike from "../productDetail/MayAlsoLike";
+import ProductCategories from "../ui/ProductCategories";
+import AboutAudiophile from "../ui/AboutAudiophile";
+import GoBackBtn from "../ui/GoBackBtn";
 
 function ProductDetail() {
   // VARIABLES
-  const navigate = useNavigate();
   const { productSlug } = useParams();
   const product = data.find((product) => product.slug === productSlug);
   const { features, includes, gallery, others } = product;
 
   return (
     <div className="sections-container">
-      <button
-        className="detail__back"
-        onClick={() => navigate(-1)}
-        type="button"
-      >
-        Go Back
-      </button>
+      <GoBackBtn />
       <ProductPreview product={product} isProductDetail={true} />
       <div className="detail__features-box">
         <Features features={features} />
@@ -29,6 +25,8 @@ function ProductDetail() {
       </div>
       <Gallery gallery={gallery} product={product} />
       <MayAlsoLike others={others} />
+      <ProductCategories />
+      <AboutAudiophile />
     </div>
   );
 }
