@@ -12,6 +12,7 @@ $color-white-10-percent: rgba(255, 255, 255, 0.104);
 $color-white-49-percent: rgba(255, 255, 255, 0.4964);
 $color-white-50-percent: rgba(255, 255, 255, 0.5);
 $color-white-75-percent: rgba(255, 255, 255, 0.75);
+$color-black-25-percent: rgba(0, 0, 0, 0.25);
 $color-black-50-percent: rgba(0, 0, 0, 0.5);
 
 // ********** FONT-FAMILY **********
@@ -42,6 +43,16 @@ body {
 html,
 body {
   height: 100%;
+}
+
+// ************ MIXINS *************
+@mixin section-header-styles {
+  color: $color-black;
+  font-size: 2.4rem;
+  font-weight: $fw-bold;
+  line-height: 3.6rem;
+  letter-spacing: 0.0857rem;
+  text-transform: uppercase;
 }
 
 // ************ HEADER ************
@@ -524,6 +535,208 @@ body {
 
   & .product-btn {
     margin: 0 auto;
+  }
+}
+
+// ************ BACK-BTN ************
+.sections-container:has(.back-btn) {
+  margin-top: 1.6rem;
+}
+
+.sections-container .back-btn + .preview {
+  margin-bottom: 8.8rem;
+}
+
+.back-btn {
+  border: none;
+  background: none;
+  color: $color-black-50-percent;
+  font-family: inherit;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  margin-bottom: 2.4rem;
+}
+
+// ************* DETAIL *************
+.detail {
+  &__price-quantity-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 3.1rem;
+  }
+
+  &__price {
+    color: $color-black;
+    font-size: 1.8rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1286rem;
+    text-transform: uppercase;
+  }
+
+  &__quantity-cart {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+  }
+
+  &__cart {
+    height: 4.8rem;
+    background: $color-raw-sienna;
+    border: none;
+    color: $color-white;
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    padding: 0 3.05rem 0 3.45rem;
+  }
+
+  &__features-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8.8rem;
+    margin-bottom: 8.5rem;
+  }
+}
+
+// ************ QUANTITY ************
+.quantity {
+  background: $color-seashell;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 4.8rem;
+  width: 12rem;
+  padding: 0 1.5rem;
+  font-size: 1.3rem;
+  font-weight: $fw-bold;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+
+  &__decrement-increment {
+    color: $color-black-25-percent;
+    width: 1.6rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__value {
+    color: $color-black;
+    width: 1.6rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+// ************ FEATURES ***********
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  &__header {
+    @include section-header-styles;
+  }
+
+  &__text {
+    color: $color-black-50-percent;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    white-space: pre-line;
+  }
+}
+
+// ************** BOX **************
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  &__header {
+    @include section-header-styles;
+  }
+
+  &__includes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__quantity-item {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  &__quantity {
+    color: $color-raw-sienna;
+    font-size: 1.5rem;
+    font-weight: $fw-bold;
+    line-height: 2.5rem;
+  }
+
+  &__item {
+    color: $color-black-50-percent;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-transform: capitalize;
+  }
+}
+
+// ************ GALLERY ************
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin-bottom: 11.7rem;
+
+  &__img {
+    display: block;
+    max-width: 32.7rem;
+    border-radius: 0.8rem;
+  }
+}
+
+// ******** RECOMMENDATIONS ********
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 17.2rem;
+
+  &__header {
+    @include section-header-styles;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 5.6rem;
+  }
+}
+
+// ********* RECOMMENDATION *********
+.recommendation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+
+  &__img {
+    display: block;
+    max-width: 32.7rem;
+    border-radius: 0.8rem;
+  }
+
+  &__name {
+    color: $color-black;
+    font-size: 2.4rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1714rem;
+    text-transform: uppercase;
   }
 }
 

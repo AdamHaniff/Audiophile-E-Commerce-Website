@@ -14,6 +14,7 @@ function ProductPreview({ product, isProductDetail = false }) {
     price,
   } = product;
 
+  const formattedPrice = price.toLocaleString();
   const { firstPart, lastWord } = splitProductName(name);
 
   return (
@@ -27,7 +28,7 @@ function ProductPreview({ product, isProductDetail = false }) {
         <p className="preview__description">{description}</p>
         {isProductDetail ? (
           <div className="detail__price-quantity-cart">
-            <span className="detail__price">$ {price}</span>
+            <span className="detail__price">$ {formattedPrice}</span>
             <div className="detail__quantity-cart">
               <Quantity />
               <button className="detail__cart" type="button">
