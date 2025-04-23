@@ -63,6 +63,10 @@ body {
   padding: 3.2rem 2.4rem;
   border-bottom: 0.1rem solid $color-white-10-percent;
 
+  &__cart-logo {
+    position: relative;
+  }
+
   &__hamburger,
   &__cart {
     display: block;
@@ -716,6 +720,10 @@ body {
     flex-direction: column;
     gap: 5.6rem;
   }
+
+  & + .categories {
+    margin-bottom: 11.7rem;
+  }
 }
 
 // ********* RECOMMENDATION *********
@@ -738,6 +746,16 @@ body {
     letter-spacing: 0.1714rem;
     text-transform: uppercase;
   }
+}
+
+// ************** CART **************
+.cart {
+  position: absolute;
+  border-radius: 0.8rem;
+  background: $color-white;
+  z-index: 999;
+  top: 5.9rem;
+  right: 0;
 }
 
 // ********* DYNAMIC STYLES *********

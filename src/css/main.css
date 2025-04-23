@@ -28,6 +28,9 @@ body {
   padding: 3.2rem 2.4rem;
   border-bottom: 0.1rem solid rgba(255, 255, 255, 0.104);
 }
+.header__cart-logo {
+  position: relative;
+}
 .header__hamburger, .header__cart {
   display: block;
 }
@@ -602,6 +605,9 @@ body {
   flex-direction: column;
   gap: 5.6rem;
 }
+.recommendations + .categories {
+  margin-bottom: 11.7rem;
+}
 
 .recommendation {
   display: flex;
@@ -620,6 +626,15 @@ body {
   font-weight: 700;
   letter-spacing: 0.1714rem;
   text-transform: uppercase;
+}
+
+.cart {
+  position: absolute;
+  border-radius: 0.8rem;
+  background: #fff;
+  z-index: 999;
+  top: 5.9rem;
+  right: 0;
 }
 
 .header--rangoon-green {
