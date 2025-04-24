@@ -13,6 +13,7 @@ $color-white-49-percent: rgba(255, 255, 255, 0.4964);
 $color-white-50-percent: rgba(255, 255, 255, 0.5);
 $color-white-75-percent: rgba(255, 255, 255, 0.75);
 $color-black-25-percent: rgba(0, 0, 0, 0.25);
+$color-black-40-percent: rgba(0, 0, 0, 0.4);
 $color-black-50-percent: rgba(0, 0, 0, 0.5);
 
 // ********** FONT-FAMILY **********
@@ -62,10 +63,6 @@ body {
   justify-content: space-between;
   padding: 3.2rem 2.4rem;
   border-bottom: 0.1rem solid $color-white-10-percent;
-
-  &__cart-logo {
-    position: relative;
-  }
 
   &__hamburger,
   &__cart {
@@ -750,12 +747,141 @@ body {
 
 // ************** CART **************
 .cart {
-  position: absolute;
+  position: fixed;
   border-radius: 0.8rem;
   background: $color-white;
   z-index: 999;
-  top: 5.9rem;
-  right: 0;
+  top: 11.4rem;
+  right: 2.4;
+  max-width: 32.7rem;
+  width: 100vw;
+  padding: 3.1rem 2.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  &__header-remove {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__header {
+    color: $color-black;
+    font-size: 1.8rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1286rem;
+    text-transform: uppercase;
+  }
+
+  &__remove {
+    color: $color-black-50-percent;
+    font-family: inherit;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-decoration-line: underline;
+    background: none;
+    border: none;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .quantity {
+      max-width: 9.6rem;
+      height: 3.2rem;
+    }
+  }
+
+  &__item-img-name {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  &__item-img {
+    display: block;
+    width: 6.4rem;
+    height: 6.4rem;
+    border-radius: 0.8rem;
+  }
+
+  &__item-name-price {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item-name {
+    color: $color-black;
+    font-size: 1.5rem;
+    font-weight: $fw-bold;
+    line-height: 2.5rem;
+  }
+
+  &__item-price {
+    color: $color-black-50-percent;
+    font-size: 1.4rem;
+    font-weight: $fw-bold;
+    line-height: 2.5rem;
+  }
+
+  &__total-checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &__total-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__total-text {
+    color: $color-black-50-percent;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    color: $color-black;
+    font-size: 1.8rem;
+    font-weight: $fw-bold;
+  }
+
+  &__checkout {
+    height: 4.8rem;
+    border: none;
+    background: $color-raw-sienna;
+    color: $color-white;
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+}
+
+// ************ OVERLAY ************
+.overlay {
+  position: fixed;
+  top: 9rem;
+  inset-inline: 0;
+  bottom: 0;
+  background: $color-black-40-percent;
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 // ********* DYNAMIC STYLES *********
@@ -766,5 +892,12 @@ body {
 
   &--black {
     background: $color-black;
+  }
+}
+
+.overlay {
+  &--visible {
+    opacity: 1;
+    pointer-events: all;
   }
 }
