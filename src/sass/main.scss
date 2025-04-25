@@ -46,6 +46,10 @@ body {
   height: 100%;
 }
 
+.main-footer {
+  position: relative;
+}
+
 // ************ MIXINS *************
 @mixin section-header-styles {
   color: $color-black;
@@ -541,7 +545,7 @@ body {
 
 // ************ BACK-BTN ************
 .sections-container:has(.back-btn) {
-  margin-top: 1.6rem;
+  padding-top: 1.6rem;
 }
 
 .sections-container .back-btn + .preview {
@@ -873,10 +877,8 @@ body {
 
 // ************ OVERLAY ************
 .overlay {
-  position: fixed;
-  top: 9rem;
-  inset-inline: 0;
-  bottom: 0;
+  position: absolute;
+  inset: 0;
   background: $color-black-40-percent;
   z-index: 998;
   opacity: 0;

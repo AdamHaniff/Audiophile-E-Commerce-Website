@@ -1,6 +1,9 @@
-function Overlay({ isVisible }) {
+function Overlay({ isVisible, onOverlayClick }) {
   return (
-    <div className={`overlay ${isVisible ? "overlay--visible" : ""}`}></div>
+    <div
+      className={`overlay ${isVisible ? "overlay--visible" : ""}`}
+      onClick={onOverlayClick}
+    ></div>
   );
 }
 

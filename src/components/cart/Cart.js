@@ -1,6 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import CartItem from "./CartItem";
 
-function Cart() {
+function Cart({ setIsCartOpen }) {
+  // VARIABLES
+  const navigate = useNavigate();
+
+  // HANDLER FUNCTIONS
+  function handleCheckoutClick() {
+    navigate("/checkout");
+    setIsCartOpen(false);
+  }
+
   return (
     <div className="cart">
       <div className="cart__header-remove">
@@ -19,7 +29,11 @@ function Cart() {
           <span className="cart__total-text">Total</span>
           <span className="cart__price">$ 5,396</span>
         </div>
-        <button className="cart__checkout" type="button">
+        <button
+          className="cart__checkout"
+          type="button"
+          onClick={handleCheckoutClick}
+        >
           Checkout
         </button>
       </div>
