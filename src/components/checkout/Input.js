@@ -1,4 +1,6 @@
-function Input({ label, placeholder }) {
+import InputRadio from "./InputRadio";
+
+function Input({ label, placeholder, isPaymentMethod = false }) {
   return (
     <div className="input">
       <div className="input__label-error">
@@ -7,12 +9,20 @@ function Input({ label, placeholder }) {
         </label>
         {/* <span className="input__error">Wrong format</span> */}
       </div>
-      <input
-        className="input__input"
-        type="text"
-        placeholder={placeholder}
-        id={label}
-      />
+      {!isPaymentMethod && (
+        <input
+          className="input__input"
+          type="text"
+          placeholder={placeholder}
+          id={label}
+        />
+      )}
+      {isPaymentMethod && (
+        <div className="input__radios">
+          <InputRadio label="e-Money" />
+          <InputRadio label="Cash on Delivery" />
+        </div>
+      )}
     </div>
   );
 }

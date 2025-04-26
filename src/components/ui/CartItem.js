@@ -1,6 +1,6 @@
-import Quantity from "../ui/Quantity";
+import Quantity from "./Quantity";
 
-function CartItem() {
+function CartItem(isSummary = false) {
   return (
     <li className="cart__item">
       <div className="cart__item-img-name">
@@ -14,7 +14,8 @@ function CartItem() {
           <span className="cart__item-price">$ 2,999</span>
         </div>
       </div>
-      <Quantity />
+      {!isSummary && <Quantity />}
+      {isSummary && <span className="summary__quantity">x1</span>}
     </li>
   );
 }

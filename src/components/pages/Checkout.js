@@ -6,8 +6,10 @@ function Checkout() {
   return (
     <div className="sections-container">
       <GoBackBtn />
-      <CheckoutContainer />
-      <Summary />
+      <div className="checkout-summary">
+        <CheckoutContainer />
+        <Summary />
+      </div>
     </div>
   );
 }

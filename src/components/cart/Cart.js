@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import CartItem from "./CartItem";
+import CartItem from "../ui/CartItem";
 
 function Cart({ setIsCartOpen }) {
   // VARIABLES
