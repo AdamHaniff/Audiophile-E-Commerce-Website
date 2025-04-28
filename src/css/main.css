@@ -738,6 +738,119 @@ body {
   text-transform: uppercase;
 }
 
+.checkout {
+  max-width: 32.7rem;
+  border-radius: 0.8rem;
+  background: #fff;
+  padding: 2.4rem 2.4rem 3.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.checkout-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.checkout__header {
+  color: #000;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+.checkout__form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.inputs__category {
+  color: #d87d4a;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  letter-spacing: 0.0929rem;
+  text-transform: uppercase;
+}
+.inputs__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.inputs__row {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.input__label-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input__label {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.0214rem;
+}
+.input__error {
+  color: #cd2c2c;
+  font-size: 1.2rem;
+  letter-spacing: -0.0214rem;
+}
+.input__input {
+  height: 5.6rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid #cfcfcf;
+  background: #fff;
+  padding: 0 2.4rem;
+  color: #000;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.025rem;
+  caret-color: #d87d4a;
+}
+.input__input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.025rem;
+}
+.input__input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.025rem;
+}
+.input__radios {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.input__radio-label {
+  height: 5.6rem;
+  border-radius: 0.8rem;
+  background: #fff;
+  border: 0.1rem solid #cfcfcf;
+  padding: 0 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
 .overlay {
   position: absolute;
   inset: 0;

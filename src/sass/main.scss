@@ -8,6 +8,8 @@ $color-alabaster: #fafafa;
 $color-seashell: #f1f1f1;
 $color-black: #000;
 $color-onyx: #101010;
+$color-persian-red: #cd2c2c;
+$color-grey-goose: #cfcfcf;
 $color-white-10-percent: rgba(255, 255, 255, 0.104);
 $color-white-49-percent: rgba(255, 255, 255, 0.4964);
 $color-white-50-percent: rgba(255, 255, 255, 0.5);
@@ -877,7 +879,124 @@ body {
 
 // ************ CHECKOUT ************
 .checkout {
+  max-width: 32.7rem;
+  border-radius: 0.8rem;
+  background: $color-white;
+  padding: 2.4rem 2.4rem 3.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
   &-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  &__header {
+    color: $color-black;
+    font-size: 2.8rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+}
+
+// ************* INPUTS *************
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  &__category {
+    color: $color-raw-sienna;
+    font-size: 1.3rem;
+    font-weight: $fw-bold;
+    line-height: 2.5rem;
+    letter-spacing: 0.0929rem;
+    text-transform: uppercase;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+}
+
+// ************* INPUT *************
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+
+  &__label-error {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__label {
+    color: $color-black;
+    font-size: 1.2rem;
+    font-weight: $fw-bold;
+    letter-spacing: -0.0214rem;
+  }
+
+  &__error {
+    color: $color-persian-red;
+    font-size: 1.2rem;
+    letter-spacing: -0.0214rem;
+  }
+
+  &__input {
+    height: 5.6rem;
+    border-radius: 0.8rem;
+    border: 0.1rem solid $color-grey-goose;
+    background: $color-white;
+    padding: 0 2.4rem;
+    color: $color-black;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: $fw-bold;
+    letter-spacing: -0.025rem;
+    caret-color: $color-raw-sienna;
+
+    &::placeholder {
+      color: $color-black-40-percent;
+      font-size: 1.4rem;
+      font-weight: $fw-bold;
+      letter-spacing: -0.025rem;
+    }
+  }
+
+  &__radios {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  &__radio-label {
+    height: 5.6rem;
+    border-radius: 0.8rem;
+    background: $color-white;
+    border: 0.1rem solid $color-grey-goose;
+    padding: 0 2.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
   }
 }
 
