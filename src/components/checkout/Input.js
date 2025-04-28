@@ -1,6 +1,12 @@
 import InputRadio from "./InputRadio";
 
-function Input({ label, placeholder, isPaymentMethod = false }) {
+function Input({
+  label,
+  placeholder,
+  isPaymentMethod = false,
+  paymentMethod,
+  setPaymentMethod,
+}) {
   return (
     <div className="input">
       <div className="input__label-error">
@@ -19,8 +25,16 @@ function Input({ label, placeholder, isPaymentMethod = false }) {
       )}
       {isPaymentMethod && (
         <div className="input__radios">
-          <InputRadio label="e-Money" />
-          <InputRadio label="Cash on Delivery" />
+          <InputRadio
+            label="e-Money"
+            paymentMethod={paymentMethod}
+            setPaymentMethod={setPaymentMethod}
+          />
+          <InputRadio
+            label="Cash on Delivery"
+            paymentMethod={paymentMethod}
+            setPaymentMethod={setPaymentMethod}
+          />
         </div>
       )}
     </div>

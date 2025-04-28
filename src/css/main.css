@@ -783,6 +783,9 @@ body {
   flex-direction: column;
   gap: 2.4rem;
 }
+.inputs__container:has(.input__radios) {
+  gap: 3.2rem;
+}
 .inputs__row {
   display: flex;
   flex-direction: column;
@@ -793,6 +796,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+}
+.input:has(.input__radios) {
+  gap: 1.7rem;
 }
 .input__label-error {
   display: flex;
@@ -817,11 +823,11 @@ body {
   background: #fff;
   padding: 0 2.4rem;
   color: #000;
-  font-family: inherit;
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: -0.025rem;
   caret-color: #d87d4a;
+  font-family: inherit;
 }
 .input__input::-moz-placeholder {
   color: rgba(0, 0, 0, 0.4);
@@ -835,6 +841,10 @@ body {
   font-weight: 700;
   letter-spacing: -0.025rem;
 }
+.input__input:focus {
+  border-color: #d87d4a;
+  outline: none;
+}
 .input__radios {
   display: flex;
   flex-direction: column;
@@ -843,12 +853,86 @@ body {
 .input__radio-label {
   height: 5.6rem;
   border-radius: 0.8rem;
-  background: #fff;
   border: 0.1rem solid #cfcfcf;
+  background: #fff;
   padding: 0 2.4rem;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.025rem;
   display: flex;
   align-items: center;
   gap: 1.6rem;
+}
+.input__radio-label:has(.input__radio:checked) {
+  border-color: #d87d4a;
+}
+.input__radio {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.input__radio:checked + .input__radio-custom::after {
+  display: inline-block;
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  background: #d87d4a;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.input__radio-custom {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 0.1rem solid #cfcfcf;
+  position: relative;
+}
+
+.on-delivery__icon-text {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+.on-delivery__icon {
+  display: block;
+}
+.on-delivery__text {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
+.summary {
+  max-width: 32.7rem;
+  border-radius: 0.8rem;
+  background: #fff;
+  padding: 3.2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.summary__header {
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1286rem;
+  text-transform: uppercase;
+}
+.summary__items {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.summary__quantity {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.5rem;
 }
 
 .overlay {

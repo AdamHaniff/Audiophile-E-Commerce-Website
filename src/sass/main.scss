@@ -62,6 +62,18 @@ body {
   text-transform: uppercase;
 }
 
+@mixin input-styles {
+  height: 5.6rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid $color-grey-goose;
+  background: $color-white;
+  padding: 0 2.4rem;
+  color: $color-black;
+  font-size: 1.4rem;
+  font-weight: $fw-bold;
+  letter-spacing: -0.025rem;
+}
+
 // ************ HEADER ************
 .header {
   display: flex;
@@ -927,6 +939,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
+
+    &:has(.input__radios) {
+      gap: 3.2rem;
+    }
   }
 
   &__row {
@@ -941,6 +957,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+
+  &:has(.input__radios) {
+    gap: 1.7rem;
+  }
 
   &__label-error {
     display: flex;
@@ -962,23 +982,20 @@ body {
   }
 
   &__input {
-    height: 5.6rem;
-    border-radius: 0.8rem;
-    border: 0.1rem solid $color-grey-goose;
-    background: $color-white;
-    padding: 0 2.4rem;
-    color: $color-black;
-    font-family: inherit;
-    font-size: 1.4rem;
-    font-weight: $fw-bold;
-    letter-spacing: -0.025rem;
+    @include input-styles;
     caret-color: $color-raw-sienna;
+    font-family: inherit;
 
     &::placeholder {
       color: $color-black-40-percent;
       font-size: 1.4rem;
       font-weight: $fw-bold;
       letter-spacing: -0.025rem;
+    }
+
+    &:focus {
+      border-color: $color-raw-sienna;
+      outline: none;
     }
   }
 
@@ -989,14 +1006,93 @@ body {
   }
 
   &__radio-label {
-    height: 5.6rem;
-    border-radius: 0.8rem;
-    background: $color-white;
-    border: 0.1rem solid $color-grey-goose;
-    padding: 0 2.4rem;
+    @include input-styles;
     display: flex;
     align-items: center;
     gap: 1.6rem;
+
+    &:has(.input__radio:checked) {
+      border-color: $color-raw-sienna;
+    }
+  }
+
+  &__radio {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .input__radio-custom::after {
+      display: inline-block;
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      background: $color-raw-sienna;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__radio-custom {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 0.1rem solid $color-grey-goose;
+    position: relative;
+  }
+}
+
+// ********** ON-DELIVERY **********
+.on-delivery {
+  &__icon-text {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+  }
+
+  &__icon {
+    display: block;
+  }
+
+  &__text {
+    color: $color-black-50-percent;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+// ************ SUMMARY ************
+.summary {
+  max-width: 32.7rem;
+  border-radius: 0.8rem;
+  background: $color-white;
+  padding: 3.2rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  &__header {
+    color: $color-black;
+    font-size: 1.8rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1286rem;
+    text-transform: uppercase;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &__quantity {
+    color: $color-black-50-percent;
+    font-size: 1.5rem;
+    font-weight: $fw-bold;
+    line-height: 2.5rem;
   }
 }
 

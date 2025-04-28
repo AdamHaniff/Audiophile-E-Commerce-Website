@@ -1,10 +1,11 @@
 import Inputs from "./Inputs";
 import InputsRow from "./InputsRow";
 import Input from "./Input";
+import { useState } from "react";
 
 function CheckoutContainer() {
-  // VARIABLES
-  const isEMoney = true;
+  // STATE
+  const [paymentMethod, setPaymentMethod] = useState("e-Money");
 
   return (
     <section className="checkout">
@@ -28,14 +29,19 @@ function CheckoutContainer() {
         </Inputs>
 
         <Inputs category="Payment Details">
-          <Input label="Payment Method" isPaymentMethod={true} />
-          {isEMoney && (
+          <Input
+            label="Payment Method"
+            isPaymentMethod={true}
+            paymentMethod={paymentMethod}
+            setPaymentMethod={setPaymentMethod}
+          />
+          {paymentMethod === "e-Money" && (
             <InputsRow>
               <Input label="e-Money Number" placeholder="238521993" />
               <Input label="e-Money Pin" placeholder="6891" />
             </InputsRow>
           )}
-          {!isEMoney && (
+          {paymentMethod === "Cash on Delivery" && (
             <div className="on-delivery__icon-text">
               <img
                 className="on-delivery__icon"
