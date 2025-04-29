@@ -710,22 +710,6 @@ body {
   flex-direction: column;
   gap: 2.4rem;
 }
-.cart__total-price {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.cart__total-text {
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-  text-transform: uppercase;
-}
-.cart__price {
-  color: #000;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
 .cart__checkout {
   height: 4.8rem;
   border: none;
@@ -751,6 +735,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  margin-bottom: 9.7rem;
 }
 .checkout__header {
   color: #000;
@@ -934,6 +919,45 @@ body {
   font-weight: 700;
   line-height: 2.5rem;
 }
+.summary__totals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.summary__totals .label-value:last-child {
+  margin-top: 1.6rem;
+}
+.summary__totals .label-value:last-child .label-value__value {
+  color: #d87d4a;
+}
+.summary__btn {
+  height: 4.8rem;
+  background: #d87d4a;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.label-value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.label-value__label {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+}
+.label-value__value {
+  color: #000;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
 
 .overlay {
   position: absolute;
@@ -955,4 +979,7 @@ body {
 .overlay--visible {
   opacity: 1;
   pointer-events: all;
+}
+.overlay--fixed {
+  position: fixed;
 }/*# sourceMappingURL=main.css.map */

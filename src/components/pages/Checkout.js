@@ -1,15 +1,23 @@
 import GoBackBtn from "../ui/GoBackBtn";
 import CheckoutContainer from "../checkout/CheckoutContainer";
 import Summary from "../checkout/Summary";
+import { useState } from "react";
+import Overlay from "../ui/Overlay";
+import Modal from "../modal/Modal";
 
 function Checkout() {
+  // STATE
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="sections-container">
       <GoBackBtn />
       <div className="checkout-summary">
         <CheckoutContainer />
-        <Summary />
+        <Summary setIsModalOpen={setIsModalOpen} />
       </div>
+      {isModalOpen && <Modal />}
+      <Overlay isVisible={isModalOpen} isModal={true} />
     </div>
   );
 }

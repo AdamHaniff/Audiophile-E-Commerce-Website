@@ -857,25 +857,6 @@ body {
     gap: 2.4rem;
   }
 
-  &__total-price {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__total-text {
-    color: $color-black-50-percent;
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-    text-transform: uppercase;
-  }
-
-  &__price {
-    color: $color-black;
-    font-size: 1.8rem;
-    font-weight: $fw-bold;
-  }
-
   &__checkout {
     height: 4.8rem;
     border: none;
@@ -903,6 +884,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
+    margin-bottom: 9.7rem;
   }
 
   &__header {
@@ -1094,6 +1076,52 @@ body {
     font-weight: $fw-bold;
     line-height: 2.5rem;
   }
+
+  &__totals {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    & .label-value:last-child {
+      margin-top: 1.6rem;
+
+      & .label-value__value {
+        color: $color-raw-sienna;
+      }
+    }
+  }
+
+  &__btn {
+    height: 4.8rem;
+    background: $color-raw-sienna;
+    border: none;
+    color: $color-white;
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: $fw-bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+}
+
+// ********** LABEL-VALUE **********
+.label-value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__label {
+    color: $color-black-50-percent;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+  }
+
+  &__value {
+    color: $color-black;
+    font-size: 1.8rem;
+    font-weight: $fw-bold;
+  }
 }
 
 // ************ OVERLAY ************
@@ -1122,5 +1150,9 @@ body {
   &--visible {
     opacity: 1;
     pointer-events: all;
+  }
+
+  &--fixed {
+    position: fixed;
   }
 }
