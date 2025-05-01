@@ -1,7 +1,18 @@
 import CartItem from "../ui/CartItem";
 import LabelValue from "../ui/LabelValue";
+import { showOverlay } from "../../slices/overlaySlice";
+import { useDispatch } from "react-redux";
 
 function Summary({ setIsModalOpen }) {
+  // VARIABLES
+  const dispatch = useDispatch();
+
+  // HANDLER FUNCTIONS
+  function handleBtnClick() {
+    setIsModalOpen(true);
+    dispatch(showOverlay("modal"));
+  }
+
   return (
     <section className="summary">
       <h2 className="summary__header">Summary</h2>
@@ -16,11 +27,7 @@ function Summary({ setIsModalOpen }) {
         <LabelValue label="VAT (Included)" value="$ 1,079" />
         <LabelValue label="Grand Total" value="$ 5,446" />
       </div>
-      <button
-        className="summary__btn"
-        type="button"
-        onClick={() => setIsModalOpen(true)}
-      >
+      <button className="summary__btn" type="button" onClick={handleBtnClick}>
         Continue & Pay
       </button>
     </section>

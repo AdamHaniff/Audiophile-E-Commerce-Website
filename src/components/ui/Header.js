@@ -1,4 +1,7 @@
 import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { showOverlay, hideOverlay } from "../../slices/overlaySlice";
+import { useEffect } from "react";
 import Logo from "./Logo";
 import Cart from "../cart/Cart";
 
@@ -6,6 +9,16 @@ function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
   // VARIABLES
   const location = useLocation();
   const isHomepage = location.pathname === "/";
+  const dispatch = useDispatch();
+
+  // EFFECTS
+  useEffect(() => {
+    if (isCartOpen) {
+      dispatch(showOverlay("cart"));
+    } else {
+      dispatch(hideOverlay());
+    }
+  }, [isCartOpen, dispatch]);
 
   return (
     <header

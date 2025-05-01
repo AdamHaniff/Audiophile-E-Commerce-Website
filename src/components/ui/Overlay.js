@@ -1,8 +1,8 @@
-function Overlay({ isVisible, onOverlayClick, isModal }) {
+function Overlay({ isVisible, isFixed, onOverlayClick }) {
   return (
     <div
       className={`overlay ${isVisible ? "overlay--visible" : ""} ${
-        isModal ? "overlay--fixed" : ""
+        isFixed ? "overlay--fixed" : ""
       }`}
       onClick={onOverlayClick}
     ></div>

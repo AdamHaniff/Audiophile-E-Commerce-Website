@@ -1,12 +1,20 @@
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { hideOverlay } from "../../slices/overlaySlice";
 import Header from "./Header";
 import Footer from "./Footer";
 import Overlay from "./Overlay";
-import { useState } from "react";
 
 function AppLayout() {
   // STATE
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // VARIABLES
+  const overlayType = useSelector((state) => state.overlay.type);
+  const isVisible = overlayType !== null;
+  const isFixed = overlayType === "modal";
+  const dispatch = useDispatch();
 
   // HANDLER FUNCTIONS
   function handleCartClick() {
@@ -15,6 +23,7 @@ function AppLayout() {
 
   function handleOverlayClick() {
     setIsCartOpen(false);
+    dispatch(hideOverlay());
   }
 
   return (
@@ -27,7 +36,11 @@ function AppLayout() {
       <div className="main-footer">
         <main>
           <Outlet />
-          <Overlay isVisible={isCartOpen} onOverlayClick={handleOverlayClick} />
+          <Overlay
+            isVisible={isVisible}
+            isFixed={isFixed}
+            onOverlayClick={handleOverlayClick}
+          />
         </main>
         <Footer />
       </div>
