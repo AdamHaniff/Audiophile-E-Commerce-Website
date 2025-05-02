@@ -17,9 +17,9 @@ function Summary({ setIsModalOpen }) {
     <section className="summary">
       <h2 className="summary__header">Summary</h2>
       <ul className="summary__items">
-        <CartItem isSummary={true} />
-        <CartItem isSummary={true} />
-        <CartItem isSummary={true} />
+        <CartItem isCart={false} />
+        <CartItem isCart={false} />
+        <CartItem isCart={false} />
       </ul>
       <div className="summary__totals">
         <LabelValue label="Total" value="$ 5,396" />
