@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import CartItem from "../ui/CartItem";
 import LabelValue from "../ui/LabelValue";
+import ActionButton from "../ui/ActionButton";
 
 function Cart({ setIsCartOpen }) {
   // VARIABLES
@@ -27,13 +28,7 @@ function Cart({ setIsCartOpen }) {
       </ul>
       <div className="cart__total-checkout">
         <LabelValue label="Total" value="$ 5,396" />
-        <button
-          className="cart__checkout"
-          type="button"
-          onClick={handleCheckoutClick}
-        >
-          Checkout
-        </button>
+        <ActionButton onClick={handleCheckoutClick}>Checkout</ActionButton>
       </div>
     </div>
   );

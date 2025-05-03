@@ -710,17 +710,6 @@ body {
   flex-direction: column;
   gap: 2.4rem;
 }
-.cart__checkout {
-  height: 4.8rem;
-  border: none;
-  background: #d87d4a;
-  color: #fff;
-  font-family: inherit;
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-}
 
 .checkout {
   max-width: 32.7rem;
@@ -930,17 +919,6 @@ body {
 .summary__totals .label-value:last-child .label-value__value {
   color: #d87d4a;
 }
-.summary__btn {
-  height: 4.8rem;
-  background: #d87d4a;
-  border: none;
-  color: #fff;
-  font-family: inherit;
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-}
 
 .label-value {
   display: flex;
@@ -1009,6 +987,7 @@ body {
   flex-direction: column;
   border-radius: 0.8rem;
   overflow: hidden;
+  margin-bottom: 2.3rem;
 }
 .modal__items {
   background: #f1f1f1;
@@ -1045,6 +1024,7 @@ body {
   align-self: center;
 }
 .modal__total {
+  background: #000;
   padding: 1.5rem 2.4rem 1.9rem;
 }
 .modal__total .label-value {
@@ -1052,6 +1032,31 @@ body {
   align-items: start;
   justify-content: initial;
   gap: 0.8rem;
+}
+.modal__total .label-value__label {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+.modal__total .label-value__value {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.modal .action-btn {
+  width: 100%;
+}
+
+.action-btn {
+  height: 4.8rem;
+  background: #d87d4a;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
 }
 
 .header--rangoon-green {

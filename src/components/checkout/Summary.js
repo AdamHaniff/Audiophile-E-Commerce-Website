@@ -1,5 +1,6 @@
 import CartItem from "../ui/CartItem";
 import LabelValue from "../ui/LabelValue";
+import ActionButton from "../ui/ActionButton";
 import { showOverlay } from "../../slices/overlaySlice";
 import { useDispatch } from "react-redux";
 
@@ -27,9 +28,7 @@ function Summary({ setIsModalOpen }) {
         <LabelValue label="VAT (Included)" value="$ 1,079" />
         <LabelValue label="Grand Total" value="$ 5,446" />
       </div>
-      <button className="summary__btn" type="button" onClick={handleBtnClick}>
-        Continue & Pay
-      </button>
+      <ActionButton onClick={handleBtnClick}>Continue & Pay</ActionButton>
     </section>
   );
 }

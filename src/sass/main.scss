@@ -857,18 +857,6 @@ body {
     flex-direction: column;
     gap: 2.4rem;
   }
-
-  &__checkout {
-    height: 4.8rem;
-    border: none;
-    background: $color-raw-sienna;
-    color: $color-white;
-    font-family: inherit;
-    font-size: 1.3rem;
-    font-weight: $fw-bold;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-  }
 }
 
 // ************ CHECKOUT ************
@@ -1091,18 +1079,6 @@ body {
       }
     }
   }
-
-  &__btn {
-    height: 4.8rem;
-    background: $color-raw-sienna;
-    border: none;
-    color: $color-white;
-    font-family: inherit;
-    font-size: 1.3rem;
-    font-weight: $fw-bold;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
-  }
 }
 
 // ********** LABEL-VALUE **********
@@ -1181,6 +1157,7 @@ body {
     flex-direction: column;
     border-radius: 0.8rem;
     overflow: hidden;
+    margin-bottom: 2.3rem;
   }
 
   &__items {
@@ -1225,7 +1202,7 @@ body {
   }
 
   &__total {
-    // background: $color-black;
+    background: $color-black;
     padding: 1.5rem 2.4rem 1.9rem;
 
     & .label-value {
@@ -1233,8 +1210,37 @@ body {
       align-items: start;
       justify-content: initial;
       gap: 0.8rem;
+
+      &__label {
+        color: $color-white-50-percent;
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+      }
+
+      &__value {
+        color: $color-white;
+        font-size: 1.8rem;
+        font-weight: $fw-bold;
+      }
     }
   }
+
+  & .action-btn {
+    width: 100%;
+  }
+}
+
+// *********** ACTION-BTN ***********
+.action-btn {
+  height: 4.8rem;
+  background: $color-raw-sienna;
+  border: none;
+  color: $color-white;
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: $fw-bold;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
 }
 
 // ********* DYNAMIC STYLES *********
