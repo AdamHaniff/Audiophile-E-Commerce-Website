@@ -1,14 +1,35 @@
 import { useState } from "react";
+import { hideOverlay } from "../../slices/overlaySlice";
+import { scrollToTop } from "../../helpers/helpers";
 import CartItem from "../ui/CartItem";
 import LabelValue from "../ui/LabelValue";
 import ActionButton from "../ui/ActionButton";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-function Modal() {
+function Modal({ setIsModalOpen }) {
+  // STATE
   const [isExpanded, setIsExpanded] = useState(false);
+
+  // VARIABLES
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // HANDLER FUNCTIONS
   function handleModalViewClick() {
     setIsExpanded((expanded) => !expanded);
+  }
+
+  function handleModalBtnClick() {
+    // Hide the modal and overlay
+    setIsModalOpen(false);
+    dispatch(hideOverlay());
+
+    // Navigate back to the top of the homepage
+    navigate("/");
+    scrollToTop();
+
+    // WRITE CODE TO EMPTY CART HERE
   }
 
   return (
@@ -48,7 +69,7 @@ function Modal() {
           <LabelValue label="Grand Total" value="$ 5,446" />
         </div>
       </div>
-      <ActionButton>Back To Home</ActionButton>
+      <ActionButton onClick={handleModalBtnClick}>Back To Home</ActionButton>
     </div>
   );
 }

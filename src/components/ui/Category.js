@@ -15,7 +15,7 @@ function Category({ category }) {
     <div className="category" onClick={handleCategoryClick}>
       <img
         className="category__img"
-        src={`/assets/shared/desktop/image-category-thumbnail-${category}.png`}
+        src={`/assets/shared/desktop/image-category-thumbnail-${category}-cropped.png`}
         alt="Headphones"
       />
       <div className="category__name-shop-icon">

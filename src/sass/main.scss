@@ -82,6 +82,7 @@ body {
   justify-content: space-between;
   padding: 3.2rem 2.4rem;
   border-bottom: 0.1rem solid $color-white-10-percent;
+  position: relative;
 
   &__hamburger,
   &__cart {
@@ -1241,6 +1242,22 @@ body {
   font-weight: $fw-bold;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+}
+
+// ************** MENU **************
+.menu {
+  border-radius: 0 0 0.8rem 0.8rem;
+  background: $color-white;
+  position: absolute;
+  top: 9.1rem;
+  left: 0;
+  padding: 8.4rem 2.4rem 3.5rem;
+  z-index: 999;
+  width: 100vw;
+  max-width: 37.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6.8rem;
 }
 
 // ********* DYNAMIC STYLES *********

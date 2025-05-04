@@ -15,7 +15,7 @@ function Checkout() {
         <CheckoutContainer />
         <Summary setIsModalOpen={setIsModalOpen} />
       </div>
-      {isModalOpen && <Modal />}
+      {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}
     </div>
   );
 }

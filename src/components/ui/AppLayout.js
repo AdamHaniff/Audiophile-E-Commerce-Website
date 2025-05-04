@@ -9,6 +9,7 @@ import Overlay from "./Overlay";
 function AppLayout() {
   // STATE
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // VARIABLES
   const overlayType = useSelector((state) => state.overlay.type);
@@ -32,6 +33,8 @@ function AppLayout() {
         isCartOpen={isCartOpen}
         onCartClick={handleCartClick}
         setIsCartOpen={setIsCartOpen}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
       />
       <div className="main-footer">
         <main>

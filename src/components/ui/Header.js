@@ -4,8 +4,15 @@ import { showOverlay, hideOverlay } from "../../slices/overlaySlice";
 import { useEffect } from "react";
 import Logo from "./Logo";
 import Cart from "../cart/Cart";
+import Menu from "../menu/Menu";
 
-function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
+function Header({
+  isCartOpen,
+  onCartClick,
+  setIsCartOpen,
+  isMenuOpen,
+  setIsMenuOpen,
+}) {
   // VARIABLES
   const location = useLocation();
   const isHomepage = location.pathname === "/";
@@ -31,6 +38,7 @@ function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
         width="16"
         height="15"
         xmlns="http://www.w3.org/2000/svg"
+        onClick={() => setIsMenuOpen((open) => !open)}
       >
         <g fill="#FFF" fillRule="evenodd">
           <path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z" />
@@ -51,6 +59,7 @@ function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
         />
       </svg>
       {isCartOpen && <Cart setIsCartOpen={setIsCartOpen} />}
+      {isMenuOpen && <Menu />}
     </header>
   );
 }
