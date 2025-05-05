@@ -23,7 +23,9 @@ function AppLayout() {
   }
 
   function handleOverlayClick() {
-    setIsCartOpen(false);
+    if (isFixed) return;
+    if (isCartOpen) setIsCartOpen(false);
+    if (isMenuOpen) setIsMenuOpen(false);
     dispatch(hideOverlay());
   }
 

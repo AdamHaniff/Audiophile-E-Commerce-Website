@@ -25,6 +25,16 @@ body {
   position: relative;
 }
 
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-9.1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .header {
   display: flex;
   align-items: center;
@@ -128,16 +138,13 @@ body {
   position: absolute;
 }
 .category:nth-child(1) img {
-  height: 10.4rem;
-  transform: translateY(-4rem);
+  transform: translateY(-5.2rem);
 }
 .category:nth-child(2) img {
-  height: 10.1rem;
-  transform: translateY(-3.7rem);
+  transform: translateY(-5.1rem);
 }
 .category:nth-child(3) img {
-  height: 13.3rem;
-  transform: translateY(-4.4rem);
+  transform: translateY(-5.1rem);
 }
 .category__name-shop-icon {
   display: flex;
@@ -1073,6 +1080,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6.8rem;
+  opacity: 0;
+  transform: translateY(-9.1rem);
+  pointer-events: none;
 }
 
 .header--rangoon-green {
@@ -1088,4 +1098,9 @@ body {
 }
 .overlay--fixed {
   position: fixed;
+}
+
+.menu--visible {
+  animation: dropdown 0.5s ease forwards;
+  pointer-events: auto;
 }/*# sourceMappingURL=main.css.map */

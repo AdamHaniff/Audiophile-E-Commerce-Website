@@ -1,12 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { scrollToTop } from "../../helpers/helpers";
 
-function Category({ category }) {
+function Category({ category, isMenuOpen, setIsMenuOpen }) {
   // VARIABLES
   const navigate = useNavigate();
 
   // HANDLER FUNCTIONS
   function handleCategoryClick() {
+    if (isMenuOpen) setIsMenuOpen(false);
     navigate(`/${category}`);
     scrollToTop();
   }

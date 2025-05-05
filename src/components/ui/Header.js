@@ -20,12 +20,12 @@ function Header({
 
   // EFFECTS
   useEffect(() => {
-    if (isCartOpen) {
-      dispatch(showOverlay("cart"));
+    if (isCartOpen || isMenuOpen) {
+      dispatch(showOverlay("cart/menu"));
     } else {
       dispatch(hideOverlay());
     }
-  }, [isCartOpen, dispatch]);
+  }, [isCartOpen, isMenuOpen, dispatch]);
 
   return (
     <header
@@ -59,7 +59,9 @@ function Header({
         />
       </svg>
       {isCartOpen && <Cart setIsCartOpen={setIsCartOpen} />}
-      {isMenuOpen && <Menu />}
+      {isMenuOpen && (
+        <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      )}
     </header>
   );
 }
