@@ -87,6 +87,17 @@ body {
   }
 }
 
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-9.1rem);
+  }
+}
+
 // ************ HEADER ************
 .header {
   display: flex;
@@ -1298,5 +1309,10 @@ body {
   &--visible {
     animation: dropdown 0.5s ease forwards;
     pointer-events: auto;
+  }
+
+  &--hiding {
+    animation: slideUp 0.5s ease forwards;
+    pointer-events: none;
   }
 }

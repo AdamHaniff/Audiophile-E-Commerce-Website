@@ -35,6 +35,16 @@ body {
     transform: translateY(0);
   }
 }
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-9.1rem);
+  }
+}
 .header {
   display: flex;
   align-items: center;
@@ -1103,4 +1113,8 @@ body {
 .menu--visible {
   animation: dropdown 0.5s ease forwards;
   pointer-events: auto;
+}
+.menu--hiding {
+  animation: slideUp 0.5s ease forwards;
+  pointer-events: none;
 }/*# sourceMappingURL=main.css.map */

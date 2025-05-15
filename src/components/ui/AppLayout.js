@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { hideOverlay } from "../../slices/overlaySlice";
+import { useMenu } from "../../hooks/MenuContext";
 import Header from "./Header";
 import Footer from "./Footer";
 import Overlay from "./Overlay";
@@ -9,7 +10,7 @@ import Overlay from "./Overlay";
 function AppLayout() {
   // STATE
   const [isCartOpen, setIsCartOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isMenuOpen, setIsMenuOpen } = useMenu();
 
   // VARIABLES
   const overlayType = useSelector((state) => state.overlay.type);
@@ -35,8 +36,6 @@ function AppLayout() {
         isCartOpen={isCartOpen}
         onCartClick={handleCartClick}
         setIsCartOpen={setIsCartOpen}
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
       />
       <div className="main-footer">
         <main>

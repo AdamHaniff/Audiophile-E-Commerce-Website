@@ -1,23 +1,17 @@
 import Category from "../ui/Category";
 
-function Menu({ isMenuOpen, setIsMenuOpen }) {
+function Menu({ isVisible, onAnimationEnd }) {
+  // VARIABLES
+  const menuClass = `menu ${isVisible ? "menu--visible" : "menu--hiding"}`;
+
   return (
-    <div className={`menu ${isMenuOpen ? "menu--visible" : ""}`}>
-      <Category
-        category="headphones"
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-      />
-      <Category
-        category="speakers"
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-      />
-      <Category
-        category="earphones"
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-      />
+    <div
+      className={menuClass}
+      onAnimationEnd={!isVisible ? onAnimationEnd : undefined}
+    >
+      <Category category="headphones" />
+      <Category category="speakers" />
+      <Category category="earphones" />
     </div>
   );
 }

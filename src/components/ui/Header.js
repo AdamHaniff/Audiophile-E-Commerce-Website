@@ -1,18 +1,17 @@
 import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { showOverlay, hideOverlay } from "../../slices/overlaySlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useMenu } from "../../hooks/MenuContext";
 import Logo from "./Logo";
 import Cart from "../cart/Cart";
 import Menu from "../menu/Menu";
 
-function Header({
-  isCartOpen,
-  onCartClick,
-  setIsCartOpen,
-  isMenuOpen,
-  setIsMenuOpen,
-}) {
+function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
+  // STATE
+  const { isMenuOpen, setIsMenuOpen } = useMenu();
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+
   // VARIABLES
   const location = useLocation();
   const isHomepage = location.pathname === "/";
@@ -27,23 +26,38 @@ function Header({
     }
   }, [isCartOpen, isMenuOpen, dispatch]);
 
+  useEffect(() => {
+    if (!isMenuOpen) {
+      setIsAnimatingOut(true);
+    }
+  }, [isMenuOpen]);
+
   return (
     <header
       className={`header ${
         isHomepage ? "header--rangoon-green" : "header--black"
       }`}
     >
-      <svg
-        className="header__hamburger"
-        width="16"
-        height="15"
-        xmlns="http://www.w3.org/2000/svg"
-        onClick={() => setIsMenuOpen((open) => !open)}
-      >
-        <g fill="#FFF" fillRule="evenodd">
-          <path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z" />
-        </g>
-      </svg>
+      {!isMenuOpen && (
+        <svg
+          className="header__hamburger"
+          width="16"
+          height="15"
+          xmlns="http://www.w3.org/2000/svg"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <g fill="#FFF" fillRule="evenodd">
+            <path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z" />
+          </g>
+        </svg>
+      )}
+      {isMenuOpen && (
+        <img
+          className="header__close"
+          src="assets/shared/tablet/icon-close.png"
+          alt="Close icon"
+        />
+      )}
       <Logo />
       <svg
         className="header__cart"
@@ -59,8 +73,11 @@ function Header({
         />
       </svg>
       {isCartOpen && <Cart setIsCartOpen={setIsCartOpen} />}
-      {isMenuOpen && (
-        <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      {(isMenuOpen || isAnimatingOut) && (
+        <Menu
+          isVisible={isMenuOpen}
+          onAnimationEnd={() => setIsAnimatingOut(false)}
+        />
       )}
     </header>
   );

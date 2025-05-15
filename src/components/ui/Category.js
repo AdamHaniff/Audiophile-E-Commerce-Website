@@ -1,7 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { scrollToTop } from "../../helpers/helpers";
+import { useMenu } from "../../hooks/MenuContext";
 
-function Category({ category, isMenuOpen, setIsMenuOpen }) {
+function Category({ category }) {
+  // STATE
+  const { isMenuOpen, setIsMenuOpen } = useMenu();
+
   // VARIABLES
   const navigate = useNavigate();
 
