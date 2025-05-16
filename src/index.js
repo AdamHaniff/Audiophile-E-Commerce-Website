@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./css/main.css";
 import App from "./App";
@@ -8,11 +7,9 @@ import { MenuProvider } from "./hooks/MenuContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <MenuProvider>
-        <App />
-      </MenuProvider>
-    </Provider>
-  </React.StrictMode>
+  <Provider store={store}>
+    <MenuProvider>
+      <App />
+    </MenuProvider>
+  </Provider>
 );

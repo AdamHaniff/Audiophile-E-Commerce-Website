@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { showOverlay, hideOverlay } from "../../slices/overlaySlice";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useMenu } from "../../hooks/MenuContext";
 import Logo from "./Logo";
 import Cart from "../cart/Cart";
@@ -17,6 +17,9 @@ function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
   const isHomepage = location.pathname === "/";
   const dispatch = useDispatch();
 
+  // REFS
+  const hasMounted = useRef(false);
+
   // EFFECTS
   useEffect(() => {
     if (isCartOpen || isMenuOpen) {
@@ -27,8 +30,12 @@ function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
   }, [isCartOpen, isMenuOpen, dispatch]);
 
   useEffect(() => {
-    if (!isMenuOpen) {
-      setIsAnimatingOut(true);
+    if (hasMounted.current) {
+      if (!isMenuOpen) {
+        setIsAnimatingOut(true);
+      }
+    } else {
+      hasMounted.current = true;
     }
   }, [isMenuOpen]);
 
@@ -38,26 +45,17 @@ function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
         isHomepage ? "header--rangoon-green" : "header--black"
       }`}
     >
-      {!isMenuOpen && (
-        <svg
-          className="header__hamburger"
-          width="16"
-          height="15"
-          xmlns="http://www.w3.org/2000/svg"
-          onClick={() => setIsMenuOpen((open) => !open)}
-        >
-          <g fill="#FFF" fillRule="evenodd">
-            <path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z" />
-          </g>
-        </svg>
-      )}
-      {isMenuOpen && (
-        <img
-          className="header__close"
-          src="assets/shared/tablet/icon-close.png"
-          alt="Close icon"
-        />
-      )}
+      <svg
+        className="header__hamburger"
+        width="16"
+        height="15"
+        xmlns="http://www.w3.org/2000/svg"
+        onClick={() => setIsMenuOpen((open) => !open)}
+      >
+        <g fill="#FFF" fillRule="evenodd">
+          <path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z" />
+        </g>
+      </svg>
       <Logo />
       <svg
         className="header__cart"
