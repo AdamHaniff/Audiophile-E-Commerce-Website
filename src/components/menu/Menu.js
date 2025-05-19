@@ -1,6 +1,7 @@
+import { forwardRef } from "react";
 import Category from "../ui/Category";
 
-function Menu({ isVisible, onAnimationEnd }) {
+const Menu = forwardRef(({ isVisible, onAnimationEnd }, ref) => {
   // VARIABLES
   const menuClass = `menu ${isVisible ? "menu--visible" : "menu--hiding"}`;
 
@@ -8,12 +9,13 @@ function Menu({ isVisible, onAnimationEnd }) {
     <div
       className={menuClass}
       onAnimationEnd={!isVisible ? onAnimationEnd : undefined}
+      ref={ref}
     >
       <Category category="headphones" />
       <Category category="speakers" />
       <Category category="earphones" />
     </div>
   );
-}
+});
 
 export default Menu;

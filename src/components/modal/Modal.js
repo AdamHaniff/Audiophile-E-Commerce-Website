@@ -1,11 +1,11 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { hideOverlay } from "../../slices/overlaySlice";
 import { scrollToTop } from "../../helpers/helpers";
 import CartItem from "../ui/CartItem";
 import LabelValue from "../ui/LabelValue";
 import ActionButton from "../ui/ActionButton";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 function Modal({ setIsModalOpen }) {
   // STATE

@@ -1,5 +1,5 @@
-import SeeProductBtn from "../ui/SeeProductBtn";
 import data from "../../data/data";
+import SeeProductBtn from "../ui/SeeProductBtn";
 
 function Recommendation({ item }) {
   // VARIABLES

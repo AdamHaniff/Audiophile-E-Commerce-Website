@@ -19,9 +19,17 @@ function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
 
   // REFS
   const hasMounted = useRef(false);
+  const isFirstRender = useRef(true);
+  const menuRef = useRef(null);
+  const hamburgerRef = useRef(null);
 
   // EFFECTS
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
     if (isCartOpen || isMenuOpen) {
       dispatch(showOverlay("cart/menu"));
     } else {
@@ -39,6 +47,25 @@ function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
     }
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    function handleOutsideClick(e) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target) &&
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(e.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [isMenuOpen, setIsMenuOpen]);
+
   return (
     <header
       className={`header ${
@@ -51,6 +78,7 @@ function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
         height="15"
         xmlns="http://www.w3.org/2000/svg"
         onClick={() => setIsMenuOpen((open) => !open)}
+        ref={hamburgerRef}
       >
         <g fill="#FFF" fillRule="evenodd">
           <path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z" />
@@ -75,6 +103,7 @@ function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
         <Menu
           isVisible={isMenuOpen}
           onAnimationEnd={() => setIsAnimatingOut(false)}
+          ref={menuRef}
         />
       )}
     </header>

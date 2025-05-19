@@ -1,7 +1,7 @@
+import { useState } from "react";
 import Inputs from "./Inputs";
 import InputsRow from "./InputsRow";
 import Input from "./Input";
-import { useState } from "react";
 
 function CheckoutContainer() {
   // STATE

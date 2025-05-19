@@ -1,8 +1,8 @@
+import { showOverlay } from "../../slices/overlaySlice";
+import { useDispatch } from "react-redux";
 import CartItem from "../ui/CartItem";
 import LabelValue from "../ui/LabelValue";
 import ActionButton from "../ui/ActionButton";
-import { showOverlay } from "../../slices/overlaySlice";
-import { useDispatch } from "react-redux";
 
 function Summary({ setIsModalOpen }) {
   // VARIABLES

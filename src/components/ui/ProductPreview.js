@@ -1,5 +1,5 @@
-import SeeProductBtn from "./SeeProductBtn";
 import { splitProductName } from "../../helpers/helpers";
+import SeeProductBtn from "./SeeProductBtn";
 import Quantity from "./Quantity";
 
 function ProductPreview({ product, isProductDetail = false }) {
