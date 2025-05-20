@@ -2,10 +2,12 @@ import { useNavigate } from "react-router-dom";
 import CartItem from "../ui/CartItem";
 import LabelValue from "../ui/LabelValue";
 import ActionButton from "../ui/ActionButton";
+import { forwardRef } from "react";
 
-function Cart({ setIsCartOpen }) {
+const Cart = forwardRef(({ isVisible, setIsCartOpen, onAnimationEnd }, ref) => {
   // VARIABLES
   const navigate = useNavigate();
+  const cartClass = `cart ${isVisible ? "cart--visible" : "cart--hidden"}`;
 
   // HANDLER FUNCTIONS
   function handleCheckoutClick() {
@@ -14,7 +16,11 @@ function Cart({ setIsCartOpen }) {
   }
 
   return (
-    <div className="cart">
+    <div
+      className={cartClass}
+      onAnimationEnd={!isVisible ? onAnimationEnd : undefined}
+      ref={ref}
+    >
       <div className="cart__header-remove">
         <span className="cart__header">Cart (3)</span>
         <button className="cart__remove" type="button">
@@ -32,6 +38,6 @@ function Cart({ setIsCartOpen }) {
       </div>
     </div>
   );
-}
+});
 
 export default Cart;

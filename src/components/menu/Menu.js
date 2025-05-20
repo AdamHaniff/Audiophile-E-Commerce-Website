@@ -3,7 +3,7 @@ import Category from "../ui/Category";
 
 const Menu = forwardRef(({ isVisible, onAnimationEnd }, ref) => {
   // VARIABLES
-  const menuClass = `menu ${isVisible ? "menu--visible" : "menu--hiding"}`;
+  const menuClass = `menu ${isVisible ? "menu--visible" : "menu--hidden"}`;
 
   return (
     <div

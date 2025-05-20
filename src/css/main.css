@@ -45,6 +45,22 @@ body {
     transform: translateY(-9.1rem);
   }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .header {
   display: flex;
   align-items: center;
@@ -660,6 +676,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 .cart__header-remove {
   display: flex;
@@ -962,7 +980,7 @@ body {
   z-index: 998;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
 .modal {
@@ -1114,7 +1132,16 @@ body {
   animation: dropdown 0.5s ease forwards;
   pointer-events: auto;
 }
-.menu--hiding {
+.menu--hidden {
   animation: slideUp 0.5s ease forwards;
+  pointer-events: none;
+}
+
+.cart--visible {
+  animation: fadeIn 0.5s forwards;
+  pointer-events: auto;
+}
+.cart--hidden {
+  animation: fadeOut 0.5s forwards;
   pointer-events: none;
 }/*# sourceMappingURL=main.css.map */
