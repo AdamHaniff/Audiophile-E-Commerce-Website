@@ -1122,6 +1122,19 @@ body {
   pointer-events: none;
 }
 
+.not-found {
+  height: 37.2rem;
+  color: #000;
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 0 2.4rem;
+}
+
 .header--rangoon-green {
   background: #191919;
 }
