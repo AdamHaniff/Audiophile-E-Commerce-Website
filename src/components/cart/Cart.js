@@ -1,11 +1,13 @@
 import { forwardRef } from "react";
+import { useSelector } from "react-redux";
 import CartFilled from "./CartFilled";
 import CartEmpty from "./CartEmpty";
 
 const Cart = forwardRef(({ isVisible, setIsCartOpen, onAnimationEnd }, ref) => {
   // VARIABLES
   const cartClass = `cart ${isVisible ? "cart--visible" : "cart--hidden"}`;
-  const isCartFilled = false;
+  const cartItems = useSelector((state) => state.cart);
+  const isCartEmpty = cartItems.length === 0;
 
   return (
     <div
@@ -13,8 +15,10 @@ const Cart = forwardRef(({ isVisible, setIsCartOpen, onAnimationEnd }, ref) => {
       onAnimationEnd={!isVisible ? onAnimationEnd : undefined}
       ref={ref}
     >
-      {isCartFilled && <CartFilled setIsCartOpen={setIsCartOpen} />}
-      {!isCartFilled && <CartEmpty />}
+      {isCartEmpty && <CartEmpty />}
+      {!isCartEmpty && (
+        <CartFilled setIsCartOpen={setIsCartOpen} cartItems={cartItems} />
+      )}
     </div>
   );
 });

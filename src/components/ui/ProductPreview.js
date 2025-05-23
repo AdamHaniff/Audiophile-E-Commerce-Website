@@ -1,8 +1,14 @@
 import { splitProductName } from "../../helpers/helpers";
-import SeeProductBtn from "./SeeProductBtn";
+import { useState } from "react";
+import { addItemToCart } from "../../slices/cartSlice.js";
+import { useDispatch } from "react-redux";
 import Quantity from "./Quantity";
+import SeeProductBtn from "./SeeProductBtn";
 
 function ProductPreview({ product, isProductDetail = false }) {
+  // STATE
+  const [quantity, setQuantity] = useState(1);
+
   // VARIABLES
   const {
     categoryImage,
@@ -16,6 +22,12 @@ function ProductPreview({ product, isProductDetail = false }) {
 
   const formattedPrice = price.toLocaleString();
   const { firstPart, lastWord } = splitProductName(name);
+  const dispatch = useDispatch();
+
+  // HANDLER FUNCTIONS
+  function handleAddToCart() {
+    dispatch(addItemToCart({ ...product, quantity }));
+  }
 
   return (
     <div className="preview">
@@ -30,8 +42,12 @@ function ProductPreview({ product, isProductDetail = false }) {
           <div className="detail__price-quantity-cart">
             <span className="detail__price">$ {formattedPrice}</span>
             <div className="detail__quantity-cart">
-              <Quantity />
-              <button className="detail__cart" type="button">
+              <Quantity quantity={quantity} setQuantity={setQuantity} />
+              <button
+                className="detail__cart"
+                type="button"
+                onClick={handleAddToCart}
+              >
                 Add To Cart
               </button>
             </div>

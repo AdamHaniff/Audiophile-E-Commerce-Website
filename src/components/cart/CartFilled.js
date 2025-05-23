@@ -3,7 +3,7 @@ import CartItem from "../ui/CartItem";
 import LabelValue from "../ui/LabelValue";
 import ActionButton from "../ui/ActionButton";
 
-function CartFilled({ setIsCartOpen }) {
+function CartFilled({ setIsCartOpen, cartItems }) {
   // VARIABLES
   const navigate = useNavigate();
 
@@ -22,9 +22,9 @@ function CartFilled({ setIsCartOpen }) {
         </button>
       </div>
       <ul className="cart__items">
-        <CartItem />
-        <CartItem />
-        <CartItem />
+        {cartItems.map((item) => (
+          <CartItem key={item.id} item={item} />
+        ))}
       </ul>
       <div className="cart__total-checkout">
         <LabelValue label="Total" value="$ 5,396" />
