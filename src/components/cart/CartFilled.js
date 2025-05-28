@@ -1,11 +1,21 @@
 import { useNavigate } from "react-router-dom";
+import { clearCart } from "../../slices/cartSlice";
+import { useDispatch } from "react-redux";
 import CartItem from "../ui/CartItem";
 import LabelValue from "../ui/LabelValue";
 import ActionButton from "../ui/ActionButton";
 
 function CartFilled({ setIsCartOpen, cartItems }) {
   // VARIABLES
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const totalCartQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+  const totalCartPrice = cartItems
+    .reduce((total, item) => total + item.price * item.quantity, 0)
+    .toLocaleString();
 
   // HANDLER FUNCTIONS
   function handleCheckoutClick() {
@@ -16,8 +26,12 @@ function CartFilled({ setIsCartOpen, cartItems }) {
   return (
     <div className="cart__filled">
       <div className="cart__header-remove">
-        <span className="cart__header">Cart (3)</span>
-        <button className="cart__remove" type="button">
+        <span className="cart__header">Cart ({totalCartQuantity})</span>
+        <button
+          className="cart__remove"
+          type="button"
+          onClick={() => dispatch(clearCart())}
+        >
           Remove all
         </button>
       </div>
@@ -27,7 +41,7 @@ function CartFilled({ setIsCartOpen, cartItems }) {
         ))}
       </ul>
       <div className="cart__total-checkout">
-        <LabelValue label="Total" value="$ 5,396" />
+        <LabelValue label="Total" value={`$ ${totalCartPrice}`} />
         <ActionButton onClick={handleCheckoutClick}>Checkout</ActionButton>
       </div>
     </div>

@@ -99,9 +99,9 @@ function Header({ isCartOpen, onCartClick, setIsCartOpen }) {
       }
     }
 
-    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener("mousedown", handleOutsideClick);
 
-    return () => document.removeEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, [isCartOpen, setIsCartOpen]);
 
   return (

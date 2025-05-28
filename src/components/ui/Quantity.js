@@ -1,26 +1,11 @@
-function Quantity({ quantity, setQuantity }) {
-  // HANDLER FUNCTIONS
-  function handleIncrementClick() {
-    setQuantity((quantity) => Math.min(10, quantity + 1));
-  }
-
-  function handleDecrementClick() {
-    setQuantity((quantity) => Math.max(1, quantity - 1));
-  }
-
+function Quantity({ quantity, onIncrement, onDecrement }) {
   return (
     <div className="quantity">
-      <span
-        className="quantity__decrement-increment"
-        onClick={handleDecrementClick}
-      >
+      <span className="quantity__decrement-increment" onClick={onDecrement}>
         -
       </span>
       <span className="quantity__value">{quantity}</span>
-      <span
-        className="quantity__decrement-increment"
-        onClick={handleIncrementClick}
-      >
+      <span className="quantity__decrement-increment" onClick={onIncrement}>
         +
       </span>
     </div>

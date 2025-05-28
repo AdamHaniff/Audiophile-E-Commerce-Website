@@ -18,7 +18,11 @@ function ProductDetail() {
   return (
     <div className="sections-container">
       <GoBackBtn />
-      <ProductPreview product={product} isProductDetail={true} />
+      <ProductPreview
+        product={product}
+        isProductDetail={true}
+        key={product.name}
+      />
       <div className="detail__features-box">
         <Features features={features} />
         <InTheBox includes={includes} />

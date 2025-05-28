@@ -29,6 +29,14 @@ function ProductPreview({ product, isProductDetail = false }) {
     dispatch(addItemToCart({ ...product, quantity }));
   }
 
+  function handleIncrementClick() {
+    setQuantity((quantity) => Math.min(10, quantity + 1));
+  }
+
+  function handleDecrementClick() {
+    setQuantity((quantity) => Math.max(1, quantity - 1));
+  }
+
   return (
     <div className="preview">
       <img className="preview__img" src={categoryImage.mobile} alt={name} />
@@ -42,7 +50,11 @@ function ProductPreview({ product, isProductDetail = false }) {
           <div className="detail__price-quantity-cart">
             <span className="detail__price">$ {formattedPrice}</span>
             <div className="detail__quantity-cart">
-              <Quantity quantity={quantity} setQuantity={setQuantity} />
+              <Quantity
+                quantity={quantity}
+                onIncrement={handleIncrementClick}
+                onDecrement={handleDecrementClick}
+              />
               <button
                 className="detail__cart"
                 type="button"
