@@ -129,6 +129,34 @@ body {
   &__cart {
     display: block;
   }
+
+  &__hamburger-container,
+  &__cart-container {
+    background: none;
+    border: none;
+    display: block;
+  }
+
+  &__cart-container {
+    position: relative;
+  }
+
+  &__cart-badge {
+    position: absolute;
+    top: -0.4rem;
+    right: -0.4rem;
+    background: $color-raw-sienna;
+    color: $color-black;
+    font-family: $font-manrope;
+    font-size: 1rem;
+    font-weight: $fw-bold;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 // ************* LOGO *************

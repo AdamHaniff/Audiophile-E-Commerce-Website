@@ -72,6 +72,30 @@ body {
 .header__hamburger, .header__cart {
   display: block;
 }
+.header__hamburger-container, .header__cart-container {
+  background: none;
+  border: none;
+  display: block;
+}
+.header__cart-container {
+  position: relative;
+}
+.header__cart-badge {
+  position: absolute;
+  top: -0.4rem;
+  right: -0.4rem;
+  background: #d87d4a;
+  color: #000;
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .logo {
   display: block;
